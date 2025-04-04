@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - BuildMate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-blue-700 text-white p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold">BuildMate</a>
+            <div class="flex items-center space-x-6">
+                <a href="products.html" class="hover:text-blue-200">Products</a>
+                <a href="cart.html" class="hover:text-blue-200 flex items-center">
+                    <i class="fas fa-shopping-cart mr-1"></i>
+                    <span id="cartCount" class="bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full">0</span>
+                </a>
+                <a href="login.html" class="hover:text-blue-200">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto p-4">
+        <!-- Search and Filters -->
+        <div class="bg-white p-4 rounded-lg shadow mb-6">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
+                <div class="relative w-full md:w-1/3">
+                    <input type="text" placeholder="Search products..." 
+                        class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                </div>
+                
+                <div class="flex space-x-2">
+                    <select class="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option>All Categories</option>
+                        <option>Cement</option>
+                        <option>Rods</option>
+                        <option>Bricks</option>
+                        <option>Sand</option>
+                        <option>Stone Chips</option>
+                    </select>
+                    
+                    <select class="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option>Sort By</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Popularity</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Product Card 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg" 
+                        alt="OPC Cement" class="w-full h-full object-cover">
+                    <div class="absolute top-2 right-2 bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded">
+                        Best Seller
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-lg">OPC Cement 50kg</h3>
+                            <p class="text-gray-600 text-sm">
+                                <span class="font-medium">ABC Building Supplies</span>
+                                <span class="ml-2 px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded">Verified Seller</span>
+                            </p>
+                        </div>
+                        <span class="text-blue-600 font-bold">₹500</span>
+                    </div>
+                    <div class="mt-3 flex items-center text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="text-gray-500 text-sm ml-1">(42)</span>
+                    </div>
+                    <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-cart-plus mr-2"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg" 
+                        alt="Steel Rods" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-lg">TMT Steel Rods (12mm)</h3>
+                            <p class="text-gray-600 text-sm">XYZ Steel</p>
+                        </div>
+                        <span class="text-blue-600 font-bold">₹75/meter</span>
+                    </div>
+                    <div class="mt-3 flex items-center text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span class="text-gray-500 text-sm ml-1">(28)</span>
+                    </div>
+                    <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-cart-plus mr-2"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg" 
+                        alt="Red Bricks" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-lg">Red Clay Bricks</h3>
+                            <p class="text-gray-600 text-sm">Brick House</p>
+                        </div>
+                        <span class="text-blue-600 font-bold">₹8/piece</span>
+                    </div>
+                    <div class="mt-3 flex items-center text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="text-gray-500 text-sm ml-1">(56)</span>
+                    </div>
+                    <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-cart-plus mr-2"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Card 4 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg" 
+                        alt="River Sand" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-lg">River Sand</h3>
+                            <p class="text-gray-600 text-sm">Sand Traders</p>
+                        </div>
+                        <span class="text-blue-600 font-bold">₹1200/ton</span>
+                    </div>
+                    <div class="mt-3 flex items-center text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="text-gray-500 text-sm ml-1">(35)</span>
+                    </div>
+                    <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-cart-plus mr-2"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="mt-8 flex justify-center">
+            <nav class="inline-flex rounded-md shadow">
+                <a href="#" class="px-3 py-2 rounded-l-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+                <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-blue-600 font-medium">1</a>
+                <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-50">2</a>
+                <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-50">3</a>
+                <a href="#" class="px-3 py-2 rounded-r-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </nav>
+        </div>
+    </main>
+
+    <script>
+        // Simple cart counter functionality
+        const cartButtons = document.querySelectorAll('button:has(.fa-cart-plus)');
+        const cartCount = document.getElementById('cartCount');
+        let count = 0;
+
+        cartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                count++;
+                cartCount.textContent = count;
+                
+                // Add animation
+                button.innerHTML = '<i class="fas fa-check mr-2"></i> Added';
+                button.classList.remove('bg-blue-600');
+                button.classList.add('bg-green-500');
+                
+                setTimeout(() => {
+                    button.innerHTML = '<i class="fas fa-cart-plus mr-2"></i> Add to Cart';
+                    button.classList.remove('bg-green-500');
+                    button.classList.add('bg-blue-600');
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+</html>
