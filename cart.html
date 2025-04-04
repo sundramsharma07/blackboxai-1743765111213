@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - BuildMate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-blue-700 text-white p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold">BuildMate</a>
+            <div class="flex items-center space-x-6">
+                <a href="products.html" class="hover:text-blue-200">Products</a>
+                <a href="cart.html" class="hover:text-blue-200 flex items-center">
+                    <i class="fas fa-shopping-cart mr-1"></i>
+                    <span id="cartCount" class="bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full">2</span>
+                </a>
+                <a href="login.html" class="hover:text-blue-200">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto p-4">
+        <h1 class="text-2xl font-bold mb-6">Your Shopping Cart</h1>
+        
+        <div class="flex flex-col lg:flex-row gap-6">
+            <!-- Cart Items -->
+            <div class="lg:w-2/3">
+                <div class="bg-white rounded-lg shadow overflow-hidden">
+                    <!-- Cart Item 1 -->
+                    <div class="p-4 border-b border-gray-200">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <div class="flex-shrink-0">
+                                <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg" 
+                                    alt="OPC Cement" class="w-24 h-24 object-cover rounded">
+                            </div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between">
+                                    <div>
+                                        <h3 class="font-bold">OPC Cement 50kg</h3>
+                                        <p class="text-gray-600 text-sm">ABC Materials</p>
+                                    </div>
+                                    <span class="text-blue-600 font-bold">₹500</span>
+                                </div>
+                                <div class="mt-2 flex items-center">
+                                    <button class="text-gray-500 hover:text-blue-600">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <input type="number" value="1" min="1" 
+                                        class="w-12 text-center border border-gray-300 rounded mx-2 py-1">
+                                    <button class="text-gray-500 hover:text-blue-600">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <button class="text-red-500 hover:text-red-700">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cart Item 2 -->
+                    <div class="p-4">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <div class="flex-shrink-0">
+                                <img src="https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg" 
+                                    alt="Steel Rods" class="w-24 h-24 object-cover rounded">
+                            </div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between">
+                                    <div>
+                                        <h3 class="font-bold">TMT Steel Rods (12mm)</h3>
+                                        <p class="text-gray-600 text-sm">XYZ Steel</p>
+                                    </div>
+                                    <span class="text-blue-600 font-bold">₹75/meter</span>
+                                </div>
+                                <div class="mt-2 flex items-center">
+                                    <button class="text-gray-500 hover:text-blue-600">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <input type="number" value="3" min="1" 
+                                        class="w-12 text-center border border-gray-300 rounded mx-2 py-1">
+                                    <button class="text-gray-500 hover:text-blue-600">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <button class="text-red-500 hover:text-red-700">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 bg-white rounded-lg shadow p-4">
+                    <h3 class="font-bold mb-2">Delivery Instructions</h3>
+                    <textarea class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                        rows="3" placeholder="Any special delivery instructions?"></textarea>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="lg:w-1/3">
+                <div class="bg-white rounded-lg shadow p-6 sticky top-4">
+                    <h2 class="text-xl font-bold mb-4">Order Summary</h2>
+                    
+                    <div class="space-y-3 mb-6">
+                        <div class="flex justify-between">
+                            <span>Subtotal (2 items)</span>
+                            <span>₹725</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Delivery Fee</span>
+                            <span>₹50</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Taxes</span>
+                            <span>₹87</span>
+                        </div>
+                        <div class="border-t border-gray-200 pt-3 flex justify-between font-bold text-lg">
+                            <span>Total</span>
+                            <span>₹862</span>
+                        </div>
+                    </div>
+
+                    <button id="checkoutBtn" class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-bold">
+                        Proceed to Checkout
+                    </button>
+
+                    <div class="mt-4 text-sm text-gray-500">
+                        <p class="flex items-center">
+                            <i class="fas fa-shield-alt mr-2"></i>
+                            Secure Payment
+                        </p>
+                        <p class="flex items-center mt-1">
+                            <i class="fas fa-undo mr-2"></i>
+                            Easy Returns
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Cart quantity adjustment functionality
+        document.querySelectorAll('button:has(.fa-minus)').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const input = e.target.closest('div').querySelector('input');
+                if (input.value > 1) {
+                    input.value = parseInt(input.value) - 1;
+                }
+            });
+        });
+
+        document.querySelectorAll('button:has(.fa-plus)').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const input = e.target.closest('div').querySelector('input');
+                input.value = parseInt(input.value) + 1;
+            });
+        });
+
+        // Remove item functionality
+        document.querySelectorAll('button:has(.fa-trash)').forEach(button => {
+            button.addEventListener('click', (e) => {
+                if (confirm('Remove this item from your cart?')) {
+                    e.target.closest('.border-b')?.remove();
+                    // In a real app, we would update the cart total here
+                }
+            });
+        });
+    </script>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg p-6 w-full max-w-md text-center">
+            <h3 class="text-lg font-semibold mb-4">Complete Payment</h3>
+            <p class="mb-2">Total Amount: <span id="totalAmount" class="font-bold">₹862</span></p>
+            <img id="qrImage" class="mx-auto mb-4 w-48 h-48" src="" alt="Payment QR Code">
+            <p class="text-sm text-gray-600 mb-4">Scan this QR code to pay via UPI</p>
+            <button id="confirmPaymentBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                I've Made Payment
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Checkout functionality
+        document.getElementById('checkoutBtn').addEventListener('click', () => {
+            const paymentModal = document.getElementById('paymentModal');
+            const qrImage = document.getElementById('qrImage');
+            const totalAmount = document.getElementById('totalAmount');
+            
+            // Calculate total with 18% GST
+            let subtotal = 0;
+            const items = document.querySelectorAll('[class*="border-b"]');
+            items.forEach(item => {
+                const priceText = item.querySelector('[class*="text-blue-600"]').textContent;
+                const price = parseFloat(priceText.replace('₹', ''));
+                const quantity = parseInt(item.querySelector('input').value);
+                subtotal += price * quantity;
+            });
+            
+            const gst = subtotal * 0.18;
+            const total = subtotal + gst;
+            totalAmount.textContent = `₹${total.toFixed(2)} (₹${subtotal.toFixed(2)} + ₹${gst.toFixed(2)} GST)`;
+            
+            // Generate QR code
+            fetch('http://localhost:3001/payments/1')
+                .then(response => response.json())
+                .then(payment => {
+                    const qrData = `upi://pay?pa=${payment.upiId}&pn=BuildMate&am=${total}&tn=OrderPayment`;
+                    qrImage.src = payment.qrCode || 
+                        `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(qrData)}`;
+                });
+            
+            paymentModal.classList.remove('hidden');
+        });
+
+        // Payment confirmation
+        document.getElementById('confirmPaymentBtn').addEventListener('click', () => {
+            const order = {
+                customerName: "Current User", // In real app, get from auth
+                totalAmount: document.getElementById('totalAmount').textContent.match(/₹([\d.]+)/)[1],
+                deliveryAddress: "Customer Address", // In real app, get from form
+                status: "paid",
+                items: Array.from(document.querySelectorAll('[class*="border-b"]')).map(item => ({
+                    name: item.querySelector('h3').textContent,
+                    price: parseFloat(item.querySelector('[class*="text-blue-600"]').textContent.replace('₹', '')),
+                    quantity: parseInt(item.querySelector('input').value)
+                }))
+            };
+
+            fetch('http://localhost:3001/orders', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(order)
+            })
+            .then(() => {
+                alert('Payment confirmed! Your order has been placed.');
+                localStorage.removeItem('cart');
+                location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>
